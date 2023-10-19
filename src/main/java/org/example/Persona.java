@@ -1,11 +1,9 @@
 package org.example;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Persona {
@@ -20,6 +18,15 @@ public class Persona {
     private Sesso sesso;
     @OneToMany(mappedBy = "persona")
     private List<Partecipazioni> lista;
+
+    @ManyToMany
+    @JoinTable(name = "Persona_Gara",
+            joinColumns = @JoinColumn(name = "id_evento"),
+            inverseJoinColumns = @JoinColumn(name = "id_persona"))
+    private Set<GaraDiAtletica> gare;
+
+    @OneToMany(mappedBy = "vincitore")
+    private List<GaraDiAtletica> gare_vinte;
 
     public Persona() {
     }
@@ -82,5 +89,21 @@ public class Persona {
 
     public void setLista(List<Partecipazioni> lista) {
         this.lista = lista;
+    }
+
+    public Set<GaraDiAtletica> getGare() {
+        return gare;
+    }
+
+    public void setGare(Set<GaraDiAtletica> gare) {
+        this.gare = gare;
+    }
+
+    public List<GaraDiAtletica> getGare_vinte() {
+        return gare_vinte;
+    }
+
+    public void setGare_vinte(List<GaraDiAtletica> gare_vinte) {
+        this.gare_vinte = gare_vinte;
     }
 }

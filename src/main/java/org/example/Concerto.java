@@ -34,4 +34,12 @@ public class Concerto extends Eventi {
     public void setStraming(boolean straming) {
         this.straming = straming;
     }
+
+    @Override
+    public String toString() {
+        return "Concerto{" +
+                "genere=" + genere +
+                ", straming=" + straming +
+                '}';
+    }
 }

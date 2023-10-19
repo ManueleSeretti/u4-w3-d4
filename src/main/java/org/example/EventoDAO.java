@@ -2,6 +2,8 @@ package org.example;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.TypedQuery;
+import java.util.List;
 
 public class EventoDAO {
 
@@ -38,5 +40,17 @@ public class EventoDAO {
         }
 
 
+    }
+
+    public List<Concerto> findConcertStreaming() {
+        System.out.println("PORCO DIO");
+        TypedQuery<Concerto> lista = em.createQuery("SELECT c FROM Concerto c WHERE c.streaming=true", Concerto.class);
+        return lista.getResultList();
+    }
+
+    public List<Concerto> getConcertiPerGenere(genere g) {
+        TypedQuery<Concerto> lista = em.createQuery("SELECT c FROM Concerto c WHERE c.genere = :genere", Concerto.class);
+        lista.setParameter("genere", g);
+        return lista.getResultList();
     }
 }
