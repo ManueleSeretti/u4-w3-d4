@@ -52,4 +52,14 @@ public class EventoDAO {
         lista.setParameter("genere", g);
         return lista.getResultList();
     }
+
+    public List<PartitaDiCalcio> partiteVinteinCasa() {
+        TypedQuery<PartitaDiCalcio> lista = em.createQuery("SELECT p FROM PartiteDiCalcio p WHERE p.squadra_casa = vincitore", PartitaDiCalcio.class);
+        return lista.getResultList();
+    }
+
+    public List<PartitaDiCalcio> partiteVinteinTrasferta() {
+        TypedQuery<PartitaDiCalcio> lista = em.createQuery("SELECT p FROM PartiteDiCalcio p WHERE p.squadra_ospite = vincitore", PartitaDiCalcio.class);
+        return lista.getResultList();
+    }
 }

@@ -109,7 +109,7 @@ public class Application {
 //            ed.save(par3);
 
 
-            List<Concerto> c = ed.getConcertiPerGenere(genere.ROCK);
+            List<PartitaDiCalcio> c = ed.partiteVinteinCasa();
             if (c.size() > 0) {
                 c.forEach(x -> System.out.println(x));
             } else {
