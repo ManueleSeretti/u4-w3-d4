@@ -82,7 +82,7 @@ public class Application {
 //            ((GaraDiAtletica) g8).setVincitore(pd.findById(75));
 //            ed.save(g13);
 
-
+//
 //            Concerto c1 = new Concerto("Vasco", d1, "ciao", tipoEvento.randomTipoEvento(), 10000, genere.ROCK, true);
 //            c1.setLocation(ld.findById(64));
 //            ed.save(c1);
@@ -90,10 +90,12 @@ public class Application {
 //            c2.setLocation(ld.findById(65));
 //            ed.save(c2);
 //            Concerto c3 = new Concerto("Metal", d1, "ciao", tipoEvento.randomTipoEvento(), 10000, genere.ROCK, true);
+//
 //            c3.setLocation(ld.findById(67));
 //            ed.save(c3);
 //            Concerto c4 = new Concerto("Rap", d1, "ciao", tipoEvento.randomTipoEvento(), 10000, genere.POP, true);
-//            c4.setLocation(null);
+//
+//            c4.setLocation(ld.findById(64));
 //            ed.save(c4);
             // Partecipazioni par1 = new Partecipazioni(pers, event, Stato.CONFERMATO);
             // pa.save(par1);
@@ -107,7 +109,7 @@ public class Application {
 //            ed.save(par3);
 
 
-            List<Concerto> c = ed.findConcertStreaming();
+            List<Concerto> c = ed.getConcertiPerGenere(genere.ROCK);
             if (c.size() > 0) {
                 c.forEach(x -> System.out.println(x));
             } else {
