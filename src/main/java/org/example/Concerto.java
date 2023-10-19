@@ -7,7 +7,7 @@ import java.time.LocalDate;
 public class Concerto extends Eventi {
     private genere genere;
 
-    private boolean straming;
+    private boolean streaming;
 
 
     public Concerto() {
@@ -16,7 +16,7 @@ public class Concerto extends Eventi {
     public Concerto(String titolo, LocalDate data_evento, String descrizione, tipoEvento tipo, int numero_massimo, org.example.genere genere, boolean straming) {
         super(titolo, data_evento, descrizione, tipo, numero_massimo);
         this.genere = genere;
-        this.straming = straming;
+        this.streaming = straming;
     }
 
     public org.example.genere getGenere() {
@@ -28,18 +28,18 @@ public class Concerto extends Eventi {
     }
 
     public boolean isStraming() {
-        return straming;
+        return streaming;
     }
 
     public void setStraming(boolean straming) {
-        this.straming = straming;
+        this.streaming = straming;
     }
 
     @Override
     public String toString() {
         return "Concerto{" +
                 "genere=" + genere +
-                ", straming=" + straming +
+                ", straming=" + streaming +
                 '}';
     }
 }

@@ -93,19 +93,21 @@ public class Application {
 //            c3.setLocation(ld.findById(67));
 //            ed.save(c3);
 //            Concerto c4 = new Concerto("Rap", d1, "ciao", tipoEvento.randomTipoEvento(), 10000, genere.POP, true);
-//            c4.setLocation(ld.findById(68));
+//            c4.setLocation(null);
 //            ed.save(c4);
             // Partecipazioni par1 = new Partecipazioni(pers, event, Stato.CONFERMATO);
             // pa.save(par1);
-            // Persona pers = pd.findById(57);
-            //Eventi event = ed.findById(59);
-            //Location loc = ld.findById(58);
-            //event.setLocation(loc);
-            //ed.save(event);
-            //ed.findByIdAndDelete(59);
 
 
-            List<Concerto> c = ed.getConcertiPerGenere(genere.ROCK);
+//            PartitaDiCalcio par1 = new PartitaDiCalcio("partita di calcio", d1, "ciao", tipoEvento.randomTipoEvento(), 60000, "Napoli", "Fiorentina", "Napoli", 3, 1);
+//            ed.save(par1);
+//            PartitaDiCalcio par2 = new PartitaDiCalcio("partita di calcio", d1, "ciao", tipoEvento.randomTipoEvento(), 60000, "Torino", "Atalanta", "Torino", 3, 1);
+//            ed.save(par2);
+//            PartitaDiCalcio par3 = new PartitaDiCalcio("partita di calcio", d1, "ciao", tipoEvento.randomTipoEvento(), 60000, "Juve", "Lazio", "Lazio", 0, 2);
+//            ed.save(par3);
+
+
+            List<Concerto> c = ed.findConcertStreaming();
             if (c.size() > 0) {
                 c.forEach(x -> System.out.println(x));
             } else {

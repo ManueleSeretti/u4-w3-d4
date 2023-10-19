@@ -43,8 +43,7 @@ public class EventoDAO {
     }
 
     public List<Concerto> findConcertStreaming() {
-        System.out.println("PORCO DIO");
-        TypedQuery<Concerto> lista = em.createQuery("SELECT c FROM Concerto c WHERE c.streaming=true", Concerto.class);
+        TypedQuery<Concerto> lista = em.createQuery("SELECT c FROM Concerto c WHERE c.streaming = true", Concerto.class);
         return lista.getResultList();
     }
 
